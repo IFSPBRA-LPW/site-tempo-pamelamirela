@@ -1,0 +1,202 @@
+
+:root {
+--fundo-principal: #070B34;
+--fundo-card: #1C1F4A;
+--painel-hourly: #15183C;
+--bg-input: #2A2E5A;
+--botao: #5C6CFF;
+--botao-hover: #4B5AF0;
+--text-1: #FFFFFF;
+--text-2: #A1A1C2;
+
+--font-family: 'Inter', sans-serif;
+--font-weight-regular: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+
+--titulo-principal-M: 2.625rem;
+--titulo-principal-D: 3.5rem;
+--temperatura-principal: 4rem;
+--titulo-secao: 1.25rem;
+--font-size-base: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-base);
+    background-color: var(--fundo-principal);
+    color: var(--text-1);
+    line-height: 1.5;
+}
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+.main h1 {
+    font-size: var(--titulo-principal-M);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+}
+.titulo-secao{
+    font-size: var(--titulo-secao);
+    grid-column: 1 / -1;
+}
+.search {
+margin: 2rem 0;
+}
+.search form {
+display: flex;
+gap: 1rem;
+}
+.search input {
+flex: 1;
+}
+input{
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    background-color: var(--bg-input);
+    color: var(--text-1);
+    border: 1px solid var(--bg-input);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s ease;
+}
+.hourly {
+    background-color: var(--painel-hourly);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.header {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid var(--fundo-card);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    background-color: var(--botao);
+    color: var(--text-1);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: var(--font-size-base);
+}
+.button:hover {
+    background-color: var(--botao-hover);
+}
+.today-weather {
+    background-color: var(--botao);
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+.today-weather h2 {
+    margin-bottom: 0.5rem;
+}
+#temperatura-principal{
+    display: flex-left;
+    font-size: var(--temperatura-principal);
+}
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.stats section {
+    text-align: center;
+    background-color: var(--fundo-card);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+.stats h3 {
+    margin-top: 1rem;
+    font-size: var(--)
+}
+.daily {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 1rem;
+
+}
+.daily section{
+    text-align: center;
+    background-color: var(--fundo-card);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+.hourly {
+    margin: 2rem 0;
+}
+.hourly-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin-top: 1rem;
+}
+.forecast-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+}
+.forecast-item {
+    list-style: none;
+    background-color: var(--bg-input);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 1rem 0;
+}
+.select{
+    display: flex;
+    text-align: left;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    background-color: var(--bg-input);
+    color: var(--text-2);
+    border-radius: 1rem;
+    border: none;
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem 1rem;
+    }
+    .main {
+        padding: 1.5rem 1rem;
+    }
+    .search form {
+flex-direction: column;
+}
+.search button {
+    width: 100%;
+}
+.stats {
+    grid-template-columns: repeat(2, 1fr);
+}
+.hourly-list {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+}
+@media (min-width: 1024px) {
+    h1 {
+        font-size: var(--titulo-principal-D);
+    }
+}
