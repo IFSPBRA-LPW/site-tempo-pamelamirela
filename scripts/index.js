@@ -127,11 +127,37 @@ function setupSearch() {
   });
 }
 
+
+function setupTheme() {
+  const button = document.querySelector("#theme-toggle");
+
+  button.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+
+    const isLight = document.body.classList.contains("light-theme");
+
+    button.textContent = isLight ? "☀️" : "🌙";
+
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  });
+}
+
+function loadTheme() {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+    document.querySelector("#theme-toggle").textContent = "☀️";
+  }
+}
+
 function init() {
   const lastCity = localStorage.getItem("lastCity") || "São Paulo";
 
   loadWeather(lastCity);
   setupSearch();
+  setupTheme();
+  loadTheme();
 }
 
 init();

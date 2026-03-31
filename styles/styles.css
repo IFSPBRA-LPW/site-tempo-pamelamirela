@@ -200,3 +200,14 @@ flex-direction: column;
         font-size: var(--titulo-principal-D);
     }
 }
+
+.light-theme {
+  --fundo-principal: #f5f7ff;
+  --fundo-card: #dfe3ff;
+  --painel-hourly: #e6e9ff;
+  --bg-input: #dfe3ff;
+  --botao: #5C6CFF;
+  --botao-hover: #4B5AF0;
+  --text-1: #070B34;
+  --text-2: #555;
+}
